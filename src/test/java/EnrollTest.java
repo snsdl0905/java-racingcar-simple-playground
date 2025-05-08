@@ -22,8 +22,8 @@ public class EnrollTest {
         car3.move(7);
 
         assertThat(car1).extracting("location").isEqualTo(0);
-        assertThat(car2).extracting("location").isEqualTo(9);
-        assertThat(car3).extracting("location").isEqualTo(7);
+        assertThat(car2).extracting("location").isEqualTo(2);
+        assertThat(car3).extracting("location").isEqualTo(1);
     }
 
     @Test

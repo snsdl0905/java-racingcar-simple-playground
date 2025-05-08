@@ -12,7 +12,7 @@ public class Car {
 
     public void move(int number){
         if(number >= MOVEMENT_THRESHOLD){
-            this.location += number;
+            this.location += 1;
         }
     }
 
