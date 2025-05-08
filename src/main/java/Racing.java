@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,13 +13,14 @@ public class Racing {
             moveCars();
         }
         List<String> winners = getWinner();
-        displayWinners(winners);
+        OutputView.displayWinners(winners);
     }
 
     private void moveCars(){
         for(Car car : cars){
             car.tryMove();
         }
+        OutputView.showCurrent(cars);
     }
 
     private List<String> getWinner(){
@@ -38,10 +38,6 @@ public class Racing {
                 .orElse(0);
     }
 
-    private void displayWinners(List<String> winners){
-        System.out.println("우승자 : ");
-        for(String winner : winners){
-            System.out.println(winner);
-        }
-    }
+
+
 }
