@@ -1,7 +1,8 @@
 import java.util.Random;
 
 public class Car {
-    private String name;
+    private static final int MOVEMENT_THRESHOLD = 4;
+    private final String name;
     private int location;
 
     public Car(String name){
@@ -9,20 +10,23 @@ public class Car {
         this.location = 0;
     }
 
-    public void move(){
-        int randomNumber = getRandomNumber();
-        if(randomNumber > 3) {
-            this.location += randomNumber;
+    public void move(int number){
+        if(number >= MOVEMENT_THRESHOLD){
+            this.location += number;
         }
     }
 
-    public int getRandomNumber(){
+    public void tryMove(){
         Random random = new Random();
-        return(random.nextInt(10));
+        int randomInt = random.nextInt(10);
+        move(randomInt);
     }
 
     public int getLocation(){
         return this.location;
     }
 
+    public String getName() {
+        return this.name;
+    }
 }
